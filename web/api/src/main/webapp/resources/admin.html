@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
+    <script defer src="/resources/js/bootstrap.min.js"></script>
+    <script src="/resources/js/requests.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+<nav class="navbar navbar-default navbar-static">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".js-navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#" style="padding:15px 15px;">AutoPanel</a>
+        </div>
+        <div class="collapse navbar-collapse js-navbar">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a id="drop1" href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        Выбрать таблицу
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a data-val="usd" href="#">Доллар</a></li>
+                        <li><a data-val="rub" href="#">Рубль</a></li>
+                        <li><a data-val="eur" href="#">Евро</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#deleteAvto" class="btn" data-toggle="modal">Удалить</a></li>
+                <li><a href="#myModal" class="btn" data-toggle="modal">Добавить</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+    <div id="deleteAvto" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Заголовок модального окна -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Добавить</h4>
+                </div>
+                <!-- Основное содержимое модального окна -->
+                <div class="modal-body">
+                    <form onsubmit="deleteCar()" action="javascript:void(null);">
+                        <input type="text" placeholder="Введите марку автомобиля" id="markForDelete">
+                        <input type="text" placeholder="Введите цену автомобиля" id="priceForDelete">
+                        <button type="submit" class="btn">Подтвердить</button>
+                    </form>
+                </div>
+                <!-- Футер модального окна -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Заголовок модального окна -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Добавить</h4>
+                </div>
+                <!-- Основное содержимое модального окна -->
+                <div class="modal-body">
+                    <form onsubmit="addNewCar()" action="javascript:void(null);">
+                        <input type="text" placeholder="Введите название предмета" id="mark">
+                        <input type="text" placeholder="Введите название предмета" id="color">
+                        <input type="text" placeholder="Введите название предмета" id="price">
+                        <input type="text" placeholder="Введите название предмета" id="dateOfSale">
+                        <input type="text" placeholder="Введите название предмета" id="dateOfSupply">
+                        <button type="submit" class="btn">Подтвердить</button>
+                    </form>
+                </div>
+                <!-- Футер модального окна -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<table class="table table-striped">
+    <tr>
+        <th class="hand-th">Марка</th>
+        <th class="hand-th">Цвет</th>
+        <th class="hand-th">Цена</th>
+        <th class="hand-th">Дата поступления</th>
+        <th class="hand-th">Дата продажи</th>
+    </tr>
+    <tbody id="all-items">
+    </tbody>
+</table>
+</div>
+</body>
+</html>
