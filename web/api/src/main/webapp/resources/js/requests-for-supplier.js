@@ -56,21 +56,15 @@ function getSupplier() {
             itemsTable.appendChild(elementRow);           //помещаем строку в таблицу
         });
     };
+    
     priceRequest.send(null);
+    $("#all-suppliers-table").tablesorter();
 }
 
+
+
+
 $(document).ready(function() {
-    // $('.dropdown-menu li a').click(function(){
-    //     var val_cur = $(this).data('val');
-    //     var requestJSONparametr = "{\"itemCurr\": \"" + val_cur + "\"}";
-    //     $.ajax({
-    //         type: "POST",
-    //         url: "/item/curr",
-    //         contentType: "application/json",
-    //         dataType: 'json',
-    //         data: requestJSONparametr,
-    //     });
-    // });
     getSupplier();
     // setInterval(getCars,5000);
 });

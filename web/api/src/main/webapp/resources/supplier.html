@@ -35,6 +35,8 @@
                             <li><a data-val="usd" href="/resources/admin.html">Машины</a></li>
                             <li><a data-val="rub" href="/resources/supplier.html">Поставщики</a></li>
                             <li><a data-val="eur" href="/resources/client.html">Клиенты</a></li>
+                            <li><a href="/resources/employees.html">Рабочие</a></li>
+                            <li><a href="/resources/test.html">Тесты</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -57,9 +59,12 @@
                 <!-- Основное содержимое модального окна -->
                 <div class="modal-body">
                     <form onsubmit="deleteSupplier()" action="javascript:void(null);">
-                        <input type="text" placeholder="Введите марку автомобиля" id="nameOfOrganizationForDelete">
-                        <input type="text" placeholder="Введите цену автомобиля" id="contactNumberForDelete">
-                        <button type="submit" class="btn">Подтвердить</button>
+                        <center>
+                        <input type="text" style="margin: 10px" placeholder="Название" id="nameOfOrganizationForDelete">
+                            <br>
+                        <input type="text" placeholder="Контакты" id="contactNumberForDelete">
+                            <br>
+                        <button type="submit" style="margin: 10px" class="btn">Удалить</button></center>
                     </form>
                 </div>
                 <!-- Футер модального окна -->
@@ -82,9 +87,12 @@
                 <!-- Основное содержимое модального окна -->
                 <div class="modal-body">
                     <form onsubmit="addNewSupplier()" action="javascript:void(null);">
-                        <input type="text" placeholder="Введите название предмета" id="nameOfOrganization">
-                        <input type="text" placeholder="Введите название предмета" id="contactNumber">
-                        <button type="submit" class="btn">Подтвердить</button>
+                        <center>
+                        <input type="text" style="margin: 10px" placeholder="Название" id="nameOfOrganization">
+                            <br>
+                        <input type="text" placeholder="Контакты" id="contactNumber">
+                            <br>
+                        <button type="submit" style="margin: 10px" class="btn">Добавить</button></center>
                     </form>
                 </div>
                 <!-- Футер модального окна -->
@@ -95,7 +103,7 @@
         </div>
     </div>
 
-    <table class="table table-striped">
+    <table class="table table-striped" id="all-suppliers-table" >
         <tr>
             <th class="hand-th">Имя организации</th>
             <th class="hand-th">Контакты</th>

@@ -7,7 +7,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
     <script defer src="/resources/js/bootstrap.min.js"></script>
-    <script src="/resources/js/requests-for-clients.js"></script>
+    <script src="/resources/js/requests-for-employees.js"></script>
 </head>
 <body>
 
@@ -32,23 +32,23 @@
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a data-val="usd" href="/resources/admin.html">Машины</a></li>
-                            <li><a data-val="rub" href="/resources/supplier.html">Поставщики</a></li>
-                            <li><a data-val="eur" href="/resources/client.html">Клиенты</a></li>
+                            <li><a  href="/resources/admin.html">Машины</a></li>
+                            <li><a  href="/resources/supplier.html">Поставщики</a></li>
+                            <li><a href="/resources/client.html">Клиенты</a></li>
                             <li><a href="/resources/employees.html">Рабочие</a></li>
                             <li><a href="/resources/test.html">Тесты</a></li>
                         </ul>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#deleteClient" class="btn" data-toggle="modal">Удалить</a></li>
-                    <li><a href="#addClient" class="btn" data-toggle="modal">Добавить</a></li>
+                    <li><a href="#deleteEmployee" class="btn" data-toggle="modal">Удалить</a></li>
+                    <li><a href="#addEmployee" class="btn" data-toggle="modal">Добавить</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div id="deleteClient" class="modal fade">
+    <div id="deleteEmployee" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
                 <!-- Заголовок модального окна -->
@@ -58,15 +58,11 @@
                 </div>
                 <!-- Основное содержимое модального окна -->
                 <div class="modal-body">
-                    <form onsubmit="deleteClient()" action="javascript:void(null);">
+                    <form onsubmit="deleteEmployees()" action="javascript:void(null);">
                         <center>
-                        <input type="text" placeholder="Имя" id="nameForDelete">
-                        <br/>
-                        <input type="text" style="margin: 10px" placeholder="Номер телефона" id="numberPhoneForDelete">
-                        <br/>
-                        <input type="text" placeholder="Адрес" id="addressForDelete">
+                        <input type="text" style="margin: 10px" placeholder="Введите марку автомобиля" id="nameForDelete">
                             <br/>
-                        <button type="submit" style="margin: 10px" class="btn">Удалить клиента</button></center>
+                        <button type="submit" class="btn">Удалить</button></center>
                     </form>
                 </div>
                 <!-- Футер модального окна -->
@@ -78,7 +74,7 @@
     </div>
 
 
-    <div id="addClient" class="modal fade">
+    <div id="addEmployee" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
                 <!-- Заголовок модального окна -->
@@ -88,16 +84,18 @@
                 </div>
                 <!-- Основное содержимое модального окна -->
                 <div class="modal-body">
-                    <form onsubmit="addNewClient()" action="javascript:void(null);">
-                        <center>
+                    <center>
+                    <form onsubmit="addNewEmployees()" action="javascript:void(null);">
                         <input type="text" style="margin: 10px" placeholder="Имя" id="name">
-                            <br/>
-                        <input type="text" placeholder="Номер телефона" id="numberPhone">
-                            <br/>
-                        <input type="text" style="margin: 10px" placeholder="Адрес" id="address">
-                            <br/>
-                        <button type="submit" class="btn">Добавить клиента</button></center>
-                    </form>
+                        <br/>
+                        <input type="text" placeholder="Зарплата" id="salary">
+                        <br/>
+                        <input type="text" style="margin: 10px" placeholder="Дата рождения" id="dateOfBirthday">
+                        <br/>
+                        <input type="text" placeholder="Дата поступления" id="dateOfreception">
+                        <br/>
+                        <button type="submit" style="margin: 10px" class="btn">Добавить</button>
+                    </form></center>
                 </div>
                 <!-- Футер модального окна -->
                 <div class="modal-footer">
@@ -110,11 +108,11 @@
     <table class="table table-striped">
         <tr>
             <th class="hand-th">Имя</th>
-            <th class="hand-th">Номер телефона</th>
-            <th class="hand-th">Адресс</th>
-
+            <th class="hand-th">Зарплата</th>
+            <th class="hand-th">Дата рождения</th>
+            <th class="hand-th">Дата поступления на работу</th>
         </tr>
-        <tbody id="all-clients">
+        <tbody id="all-employees">
         </tbody>
     </table>
 </div>

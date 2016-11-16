@@ -35,10 +35,9 @@ http://www.springframework.org/schema/task/spring-task-3.0.xsd">
                 <beans:value>ru.avtosalon.entity.Automobile</beans:value>
                 <beans:value>ru.avtosalon.entity.Supplier</beans:value>
                 <beans:value>ru.avtosalon.entity.Client</beans:value>
-                <!--<beans:value>ru.price.Currency</beans:value>-->
-                <!--<beans:value>ru.university.entity.Group</beans:value>-->
-                <!--<beans:value>ru.university.entity.Teacher</beans:value>-->
-                <!--<beans:value>ru.university.entity.Estimate</beans:value>-->
+                <beans:value>ru.avtosalon.entity.Employee</beans:value>
+                <beans:value>ru.avtosalon.entity.TestDrive</beans:value>
+
             </beans:list>
         </beans:property>
         <beans:property name="hibernateProperties">

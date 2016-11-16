@@ -10,7 +10,7 @@ function deleteCar() {
     var markForDelete = $('#markForDelete').val();
     var priceForDelete = $('#priceForDelete').val();
     
-    var requestJSONparametr = "{\"markForDelete\": \"" + markForDelete + "\", \"priceForDelete\": \"" + priceForDelete + "\"}";
+    var requestJSONparametr = "{\"mark\": \"" + markForDelete + "\", \"price\": \"" + priceForDelete + "\"}";
     $.ajax({
         type: "POST",
         url: "/car/delete",
@@ -39,7 +39,6 @@ function addNewCar() {
 }
 
 
-function getCars() {
     var priceRequest = new XMLHttpRequest();
     priceRequest.open("GET", "/car/get", true);   //Указываем адрес GET-запроса
     priceRequest.onload = function (){             //Функция которая отправляет запрос на сервер для получения всех студентов
@@ -67,22 +66,12 @@ function getCars() {
                 elementRow.appendChild(dateOfSale);
             itemsTable.appendChild(elementRow);           //помещаем строку в таблицу
         });
+        $("#all-items-table").tablesorter();
     };
-    priceRequest.send(null);
-}
+
+priceRequest.send(null);
 
 $(document).ready(function() {
-    $('.dropdown-menu li a').click(function(){
-        var val_cur = $(this).data('val');
-        var requestJSONparametr = "{\"itemCurr\": \"" + val_cur + "\"}";
-        $.ajax({
-            type: "POST",
-            url: "/item/curr",
-            contentType: "application/json",
-            dataType: 'json',
-            data: requestJSONparametr,
-        });
-    });
-    getCars();
+  //  getCars();
     // setInterval(getCars,5000);
 });

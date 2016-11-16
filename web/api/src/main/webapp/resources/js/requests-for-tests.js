@@ -6,30 +6,28 @@ $(document).ready(function() {
     })
 });
 
-function deleteClient() {
+function deleteTests() {
     var nameForDelete = $('#nameForDelete').val();
-    var numberPhoneForDelete = $('#numberPhoneForDelete').val();
-    var addressForDelete = $('#addressForDelete').val();
-    var requestJSONparametr = "{\"nameForDelete\": \"" + nameForDelete + "\", \"numberPhoneForDelete\": \"" + numberPhoneForDelete + "\", \"addressForDelete\": \"" + addressForDelete + "\"}";
+
+    var requestJSONparametr = "{\"name\": \"" + nameForDelete + "\"}";
     $.ajax({
         type: "POST",
-        url: "/client/delete",
+        url: "/test/delete",
         contentType: "application/json",
         dataType: 'json',
-        data: requestJSONparametr
+        data: requestJSONparametr,
     });
 }
 
-function addNewClient() {
+function addNewTest() {
     var name = $('#name').val();
-    var numberPhone = $('#numberPhone').val();
-    var address = $('#address').val();
- 
+    var nameOfAutomobile = $('#nameOfAutomobile').val();
+    var date = $('#date').val();
 
-    var requestJSONparametr = "{\"name\": \"" + name + "\", \"numberPhone\": \"" + numberPhone + "\", \"address\": \"" + address + "\"}";
+    var requestJSONparametr = "{\"name\": \"" + name + "\", \"nameOfAutomobile\": \"" + nameOfAutomobile + "\", \"date\": \"" + date + "\"}";
     $.ajax({
         type: "POST",
-        url: "/client/add",
+        url: "/test /add",
         contentType: "application/json",
         dataType: 'json',
         data: requestJSONparametr
@@ -37,45 +35,36 @@ function addNewClient() {
 }
 
 
-function getClients() {
+function getTests() {
     var priceRequest = new XMLHttpRequest();
-    priceRequest.open("GET", "/client/get", true);   //Указываем адрес GET-запроса
+    priceRequest.open("GET", "/test/get", true);   //Указываем адрес GET-запроса
     priceRequest.onload = function (){             //Функция которая отправляет запрос на сервер для получения всех студентов
         var parsedItem = JSON.parse(this.responseText);
-        var itemsTable = document.getElementById('all-clients'); //получаем элемент по Id
+        var itemsTable = document.getElementById('all-tests'); //получаем элемент по Id
         itemsTable.innerHTML = '';      //очищаем таблицу от устаревших данных
         parsedItem.forEach(function(item)  {
             var itemNameElement = document.createElement('td'); //создаем элемент ячейку с названием для таблицы
             itemNameElement.innerHTML =  item['name'] ;     //внедряем название предмета, полученное с сервера
             var itemPriceElement = document.createElement('td');
-            itemPriceElement.innerHTML = item['numberPhone'];
-            var priceElement = document.createElement('td');
-            priceElement.innerHTML = item['address'];
-
+            itemPriceElement.innerHTML = item['nameOfAutomobile'];
+            var date = document.createElement('td');
+            date.innerHTML = item['date'];
             var elementRow = document.createElement('tr'); /// /создаем строку таблицы
 
             elementRow.appendChild(itemNameElement);      //помещаем обе ячейки в строку
             elementRow.appendChild(itemPriceElement);
-            elementRow.appendChild(priceElement);
+            elementRow.appendChild(date);
             itemsTable.appendChild(elementRow);           //помещаем строку в таблицу
         });
     };
     priceRequest.send(null);
-    $("#all-clients").tablesorter();
+    $("#all-tests").tablesorter();
+
 }
 
+
+
+
 $(document).ready(function() {
-    $('.dropdown-menu li a').click(function(){
-        var val_cur = $(this).data('val');
-        var requestJSONparametr = "{\"itemCurr\": \"" + val_cur + "\"}";
-        $.ajax({
-            type: "POST",
-            url: "/item/curr",
-            contentType: "application/json",
-            dataType: 'json',
-            data: requestJSONparametr,
-        });
-    });
-    getClients();
-    // setInterval(getCars,5000);
+    getTests();
 });

@@ -10,6 +10,6 @@ public class MainController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String getMain(){
-        return "resources/index.html";
+        return "/resources/admin.html";
     }
 }
