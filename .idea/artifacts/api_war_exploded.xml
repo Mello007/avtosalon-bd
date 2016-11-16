@@ -27,7 +27,6 @@
           <element id="archive" name="service-1.0-SNAPSHOT.jar">
             <element id="module-output" name="service" />
           </element>
-          <element id="library" level="project" name="Maven: parser-steam-price:entity:1.0-SNAPSHOT" />
           <element id="library" level="project" name="Maven: org.apache.commons:commons-lang3:3.4" />
           <element id="library" level="project" name="Maven: org.postgresql:postgresql:9.4.1208.jre7" />
           <element id="library" level="project" name="Maven: org.hibernate:hibernate-entitymanager:5.1.0.Final" />

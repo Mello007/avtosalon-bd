@@ -17,8 +17,6 @@ public class CarService {
 
     @Autowired SessionFactory sessionFactory;
 
-
-
     @Transactional
     public List<Automobile> getCar() throws SQLException {
         Query query = sessionFactory.openSession().createQuery("from Automobile");
@@ -38,5 +36,6 @@ public class CarService {
         query1.setParameter("price", automobile.getPriceForDelete());
         return query1.executeUpdate();
     }
+
 
 }
