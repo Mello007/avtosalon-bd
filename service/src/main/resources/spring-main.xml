@@ -34,6 +34,7 @@ http://www.springframework.org/schema/task/spring-task-3.0.xsd">
             <beans:list>
                 <beans:value>ru.avtosalon.entity.Automobile</beans:value>
                 <beans:value>ru.avtosalon.entity.Supplier</beans:value>
+                <beans:value>ru.avtosalon.entity.Client</beans:value>
                 <!--<beans:value>ru.price.Currency</beans:value>-->
                 <!--<beans:value>ru.university.entity.Group</beans:value>-->
                 <!--<beans:value>ru.university.entity.Teacher</beans:value>-->

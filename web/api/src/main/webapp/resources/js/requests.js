@@ -16,13 +16,7 @@ function deleteCar() {
         url: "/car/delete",
         contentType: "application/json",
         dataType: 'json',
-        data: requestJSONparametr,
-        success: function (data) {
-            alert("Предмет успешно добавлен!");
-        },
-        error: function (data) {
-            alert("Не удалось добавить предмет! Что-то пошло не так, попробуйте еще раз");
-        }
+        data: requestJSONparametr
     });
 }
 
@@ -41,12 +35,6 @@ function addNewCar() {
         contentType: "application/json",
         dataType: 'json',
         data: requestJSONparametr,
-        success: function (data) {
-            alert("Предмет успешно добавлен!");
-        },
-        error: function (data) {
-            alert("Не удалось добавить предмет! Что-то пошло не так, попробуйте еще раз");
-        }
     });
 }
 
@@ -93,12 +81,6 @@ $(document).ready(function() {
             contentType: "application/json",
             dataType: 'json',
             data: requestJSONparametr,
-            success: function (data) {
-                alert("Цена установлена");
-            },
-            error: function (data) {
-                alert("Не удалось установить цену!");
-            }
         });
     });
     getCars();
