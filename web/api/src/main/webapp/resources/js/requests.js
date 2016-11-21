@@ -20,13 +20,34 @@ function deleteCar() {
     });
 }
 
+
+function findCar() {
+    var markForSearch = $('#markForSearch').val();
+    var priceForSearch = $('#priceForSearch').val();
+
+    var requestJSONparametr = "{\"mark\": \"" + markForSearch + "\", \"price\": \"" + priceForSearch + "\"}";
+    $.ajax({
+        type: "GET",
+        url: "/car/find",
+        contentType: "application/json",
+        dataType: 'json',
+        data: requestJSONparametr,
+        success: good()
+    });
+
+    function good() {
+        
+    }
+
+}
+
 function addNewCar() {
     var mark = $('#mark').val();
     var color = $('#color').val();
     var price = $('#price').val();
     var dateOfSale = $('#dateOfSale').val();
     var dateOfSupply = $('#dateOfSupply').val();
-    
+
     var requestJSONparametr = "{\"mark\": \"" + mark + "\", \"color\": \"" + color + "\", \"price\": \"" + price + "\"" +
         ", \"dateOfSale\": \"" + dateOfSale + "\", \"dateOfSupply\": \"" + dateOfSupply + "\"}";
     $.ajax({
@@ -34,7 +55,7 @@ function addNewCar() {
         url: "/car/add",
         contentType: "application/json",
         dataType: 'json',
-        data: requestJSONparametr,
+        data: requestJSONparametr
     });
 }
 
@@ -66,12 +87,7 @@ function addNewCar() {
                 elementRow.appendChild(dateOfSale);
             itemsTable.appendChild(elementRow);           //помещаем строку в таблицу
         });
-        $("#all-items-table").tablesorter();
+
     };
 
 priceRequest.send(null);
-
-$(document).ready(function() {
-  //  getCars();
-    // setInterval(getCars,5000);
-});

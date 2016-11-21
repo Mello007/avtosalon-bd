@@ -115,5 +115,14 @@
         </tbody>
     </table>
 </div>
+<script src="/resources/js/tablesorter/jquery.tablesorter.js"></script>
+<script src="/resources/js/search/jquery.filtertable.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('table').tablesorter();
+        $('table').filterTable({minRows: 0});
+    });
+</script>
 </body>
 </html>

@@ -48,6 +48,7 @@
     </div>
 </nav>
 
+
     <div id="deleteAvto" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -109,7 +110,9 @@
         </div>
     </div>
 
+
 <table class="table table-striped" id="all-items-table">
+    <thead>
     <tr>
         <th class="hand-th">Марка</th>
         <th class="hand-th">Цвет</th>
@@ -117,9 +120,19 @@
         <th class="hand-th">Дата поступления</th>
         <th class="hand-th">Дата продажи</th>
     </tr>
+    </thead>
     <tbody id="all-items">
     </tbody>
 </table>
+    <script src="/resources/js/tablesorter/jquery.tablesorter.js"></script>
+    <script src="/resources/js/search/jquery.filtertable.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('table').tablesorter();
+            $('table').filterTable({minRows: 0});
+        });
+    </script>
 </div>
 </body>
 </html>

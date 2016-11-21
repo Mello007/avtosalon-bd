@@ -112,11 +112,20 @@
             <th class="hand-th">Имя</th>
             <th class="hand-th">Номер телефона</th>
             <th class="hand-th">Адресс</th>
-
         </tr>
         <tbody id="all-clients">
         </tbody>
     </table>
+
+    <script src="/resources/js/tablesorter/jquery.tablesorter.js"></script>
+    <script src="/resources/js/search/jquery.filtertable.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('table').tablesorter();
+            $('table').filterTable({minRows: 0});
+        });
+    </script>
 </div>
 </body>
 </html>
