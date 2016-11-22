@@ -10,7 +10,7 @@ function deleteCar() {
     var markForDelete = $('#markForDelete').val();
     var priceForDelete = $('#priceForDelete').val();
     
-    var requestJSONparametr = "{\"mark\": \"" + markForDelete + "\", \"price\": \"" + priceForDelete + "\"}";
+    var requestJSONparametr = "{\"markForDelete\": \"" + markForDelete + "\", \"priceForDelete\": \"" + priceForDelete + "\"}";
     $.ajax({
         type: "POST",
         url: "/car/delete",

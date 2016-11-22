@@ -10,7 +10,7 @@ function deleteClient() {
     var nameForDelete = $('#nameForDelete').val();
     var numberPhoneForDelete = $('#numberPhoneForDelete').val();
     var addressForDelete = $('#addressForDelete').val();
-    var requestJSONparametr = "{\"nameForDelete\": \"" + nameForDelete + "\", \"numberPhoneForDelete\": \"" + numberPhoneForDelete + "\", \"addressForDelete\": \"" + addressForDelete + "\"}";
+    var requestJSONparametr = "{\"name\": \"" + nameForDelete + "\", \"numberPhone\": \"" + numberPhoneForDelete + "\", \"address\": \"" + addressForDelete + "\"}";
     $.ajax({
         type: "POST",
         url: "/client/delete",
